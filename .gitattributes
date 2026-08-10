@@ -1,6 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-
 # Unity YAML assets
 *.anim unity-yaml-file
 *.asset unity-yaml-file
@@ -25,33 +24,27 @@
 *.spriteatlas unity-yaml-file
 *.terrainlayer unity-yaml-file
 *.unity unity-yaml-file
-
 # Large Unity-generated assets
 *LightingData.asset lfs-file
 *OcclusionCullingData.asset lfs-file
 *-[Nn]av[Mm]esh.asset lfs-file
 *-[Tt]errain.asset lfs-file
-
 # 3D Assets
-*.fbx lfs-file
+*.fbx filter=lfs diff=lfs merge=lfs -text
 *.FBX lfs-file
 *.blend lfs-file
 *.glb lfs-file
 *.gltf lfs-file
 *.obj lfs-file
-
 # High Dynamic Range Images
-*.exr lfs-file
-
+*.exr filter=lfs diff=lfs merge=lfs -text
 # Photoshop/Affinity source files
 *.psd lfs-file
 *.afdesign lfs-file
 *.afphoto lfs-file
-
 # Videos
 *.mp4 lfs-file
 *.mov lfs-file
 *.avi lfs-file
-
 # Unity Packages
 *.unitypackage lfs-file
