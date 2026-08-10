@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01fd2d64a9249049aaa77d5c12a82fe, type: 3}
+  m_Name: Question4
+  m_EditorClassIdentifier: 
+  questionText: If the density of a plant species is low
+  referenceImage: {fileID: 0}
+  explanationText: A species' survival depends upon many factors like competition,
+    presence of light, type of soil and other disturbances like grazing.
+  options:
+  - Its growth could be affected by external factors like soil, moisture etc.
+  - It could have been uprooted during grazing before the proliferation.
+  - It would have not survived competition with a dominant species.
+  - All of the above
+  correctOptionIndex: 3

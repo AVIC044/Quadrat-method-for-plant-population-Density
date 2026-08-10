@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d01fd2d64a9249049aaa77d5c12a82fe, type: 3}
   m_Name: Question1
   m_EditorClassIdentifier: 
-  questionText: '1. The angle between the reflected ray and the
-
-    normal at the
-    point of incidence is called______'
+  questionText: Calculate the density of species C in the given quadrats. Quadrat-I
+    shows the counts of species A - 5, species B-3, species C- 10; Quadrat- Il shows,
+    species A - 3, species B- 5, species C-4. Density of species C will be_
   referenceImage: {fileID: 0}
-  explanationText: The angle between the normal and the reflected ray is known as
-    the angle of reflection.
+  explanationText: The number of sample areas (Q) are 2 and the total population
+    of species C is 14. Hence, The density of species C is derive d from above quadrats
+    is 07. Density is calculated as the number of individuals (S) of the plant species
+    C divided by the total number of sample areas (Q). Density = S/Q
   options:
-  - The glance angle
-  - 'The angle of reflection '
-  - The angle of incidence
-  - The angle of emergence
-  correctOptionIndex: 1
+  - 14
+  - 5
+  - 7
+  - 0.7
+  correctOptionIndex: 2
