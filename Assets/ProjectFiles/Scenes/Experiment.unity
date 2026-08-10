@@ -559,7 +559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4611879653396418795, guid: 148e3734bc293a24eb6c0538bc2684e5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -978,10 +978,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 2
-    pageText: 'Select the plants that grow under sunlight, wet and grazing areas,
-      required to study the
-
-      population density.'
+    pageText: Select the plants that grow under sunlight, wet and grazing areas,
+      required to study the population density.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -990,7 +988,7 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 3
-    pageText: 
+    pageText: Tap on the screen to construct a quadrat.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1000,7 +998,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 4
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 0}
@@ -1009,7 +1007,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 5
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 0}
@@ -1018,7 +1016,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 6
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 0}
@@ -1027,7 +1025,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 7
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 0}
@@ -1035,7 +1033,7 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 8
-    pageText: 
+    pageText: Tap on the highlighted plant species with clover shaped leaves.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1044,7 +1042,7 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 9
-    pageText: 
+    pageText: Tap on the highlighted plant species with coin shaped leaves.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1053,7 +1051,7 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 10
-    pageText: 
+    pageText: Tap on the highlighted plant species, which contains 4 petalled flowers.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1062,7 +1060,7 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 11
-    pageText: 
+    pageText: Tap on the highlighted quadrat.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1071,7 +1069,7 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 12
-    pageText: 
+    pageText: Tap on the habitat exposed to sunlight.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1080,7 +1078,7 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 13
-    pageText: 
+    pageText: Tap on quadrat l.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1089,7 +1087,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 14
-    pageText: 
+    pageText: Count the number of individuals of species A, and tap on the observation
+      table button to note it in the observation table.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1098,7 +1097,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 15
-    pageText: 
+    pageText: Count the number of individuals of species B, and tap on the observation
+      table button to note it in the observation table.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1107,7 +1107,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 16
-    pageText: 
+    pageText: Count the number of individuals of species C, and tap on the observation
+      table button to note it in the observation table.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1116,7 +1117,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 17
-    pageText: 
+    pageText: Observe the quadrat II and tap on observation table to observe the
+      population of various species counted.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1125,7 +1127,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 18
-    pageText: 
+    pageText: Observe the quadrat III and tap on observation table to observe the
+      population of various species counted.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1135,7 +1138,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 19
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 0}
@@ -1143,7 +1146,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 20
-    pageText: 
+    pageText: Calculate the total number of individuals (S) of species A, and note
+      it in the table from the dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1152,7 +1156,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 21
-    pageText: 
+    pageText: Calculate the total number of individuals (S) of species B, and note
+      it in the table from the dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1161,7 +1166,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 22
-    pageText: 
+    pageText: Calculate the total number of individuals (S) of species C, and note
+      it in the table from the dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1171,7 +1177,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 23
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 0}
@@ -1179,7 +1185,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 24
-    pageText: 
+    pageText: Calculate the density of species A and note it in the table from the
+      dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1188,7 +1195,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 25
-    pageText: 
+    pageText: Calculate the density of species B and note it in the table from the
+      dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1197,7 +1205,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 26
-    pageText: 
+    pageText: Calculate the density of species C and note it in the table from the
+      dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1207,7 +1216,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 27
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 0}
@@ -1215,7 +1224,7 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 28
-    pageText: 
+    pageText: Tap on the habitat that contains moist soil.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1224,7 +1233,7 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 29
-    pageText: 
+    pageText: Tap on the quadrat I constructed on moist soil.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1233,7 +1242,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 30
-    pageText: 
+    pageText: Count the number of individuals of species A, and tap on the observation
+      table button to note it in the observation table.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1242,7 +1252,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 31
-    pageText: 
+    pageText: Count the number of individuals of species B, and tap on the observation
+      table button to note it in the observation table.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1251,7 +1262,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 32
-    pageText: 
+    pageText: Count the number of individuals of species C, and tap on the observation
+      table button to note it in the observation table.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1260,7 +1272,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 33
-    pageText: 
+    pageText: Observe the quadrat II and tap on the observation table to observe
+      the population of various species counted.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1269,7 +1282,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 34
-    pageText: 
+    pageText: Observe the quadrat III and tap on the observation table to observe
+      the population of various species counted.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1279,7 +1293,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 35
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 0}
@@ -1288,7 +1302,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 36
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 0}
@@ -1296,7 +1310,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 37
-    pageText: 
+    pageText: Calculate the total number of individuals (S) of species A, and note
+      it in the table from the dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1305,7 +1320,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 38
-    pageText: 
+    pageText: Calculate the total number of individuals (S) of species B, and note
+      it in the table from the dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1314,7 +1330,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 39
-    pageText: 
+    pageText: Calculate the total number of individuals (S) of species C, and note
+      it in the table from the dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1323,7 +1340,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 40
-    pageText: 
+    pageText: Calculate the density of species A and note it in the table from the
+      dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1332,7 +1350,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 41
-    pageText: 
+    pageText: Calculate the density of species B and note it in the table from the
+      dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1341,7 +1360,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 42
-    pageText: 
+    pageText: Calculate the density of species C and note it in the table from the
+      dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1350,7 +1370,7 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 43
-    pageText: 
+    pageText: Tap on the habitat that contains grazers.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1359,7 +1379,7 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 44
-    pageText: 
+    pageText: Tap on qudrat I to collect similar data from it.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1368,7 +1388,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 45
-    pageText: 
+    pageText: Count the number of individuals of species A, and tap on the observation
+      table button to note it in the observation table.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1377,7 +1398,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 46
-    pageText: 
+    pageText: Count the number of individuals of species B, and tap on the observation
+      table button to note it in the observation table.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1386,7 +1408,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 47
-    pageText: 
+    pageText: Count the number of individuals of species C, and tap on the observation
+      table button to note it in the observation table.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1395,7 +1418,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 48
-    pageText: 
+    pageText: Observe the quadrat II and tap on observation table to observe the
+      population of various species counted.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1404,7 +1428,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 49
-    pageText: 
+    pageText: Observe the quadrat III and tap on observation table to observe the
+      population of various species counted.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1423,7 +1448,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 51
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 0}
@@ -1432,7 +1457,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 52
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 0}
@@ -1440,7 +1465,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 53
-    pageText: 
+    pageText: Calculate the total number of individuals (S) of species A, and note
+      it in the table from the dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1449,7 +1475,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 54
-    pageText: 
+    pageText: Calculate the total number of individuals (S) of species B, and note
+      it in the table from the dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1458,7 +1485,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 55
-    pageText: 
+    pageText: Calculate the total number of individuals (S) of species C, and note
+      it in the table from the dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1467,7 +1495,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 56
-    pageText: 
+    pageText: Calculate the density of species A and note it in the table from the
+      dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1476,7 +1505,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 57
-    pageText: 
+    pageText: Calculate the density of species B and note it in the table from the
+      dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1485,7 +1515,8 @@ MonoBehaviour:
       enableOnce: 0
       hasBeenEnabledOnce: 0
   - pageName: Page 58
-    pageText: 
+    pageText: Calculate the density of species C and note it in the table from the
+      dropdown.
     showDialogBox: 1
     showAlternatePanels: 1
     alternatePanels:
@@ -1495,7 +1526,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 59
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 0}
@@ -1504,7 +1535,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 60
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 0}
