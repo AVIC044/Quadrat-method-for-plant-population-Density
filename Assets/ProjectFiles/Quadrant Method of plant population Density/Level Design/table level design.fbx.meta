@@ -3,7 +3,117 @@ guid: 359d10963b5b29a4d87abeac343f7830
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Biology Table
+    second: {fileID: 2100000, guid: d75d4bbaa615c684b949c7bf67abebed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hammer_M
+    second: {fileID: 2100000, guid: 674ea13bbdae8c34996c0c8401369747, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Iron_nail_M
+    second: {fileID: 2100000, guid: 49ed2aa6edf33a74f972299e643d55a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rope_M
+    second: {fileID: 2100000, guid: b872c3bfc0465bf4da07b3ef920722dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tape mesuring.001
+    second: {fileID: 2100000, guid: a7e463eb81c1c7e4ca7ce5ce797cb7c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tape.001
+    second: {fileID: 2100000, guid: 8a47000fcc0daab4080e972444fe0355, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Biology Table_Biology Table_AlbedoTransparency
+    second: {fileID: 2800000, guid: 33e3645a428c26e438603ac8a4311a6a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Biology Table_Biology Table_MetallicSmoothness
+    second: {fileID: 2800000, guid: 71d692e8f96cffa4ab3df232df6dab01, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Biology Table_Biology Table_Normal
+    second: {fileID: 2800000, guid: 790138150723a0848a6264e6a878eec1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Hammer_Hammer_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: 333ab8b75387f5f4ab178ed1396f7ef4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Hammer_Hammer_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: aefa009bc43bee647a2aab40203546c6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Hammer_Hammer_M_Normal
+    second: {fileID: 2800000, guid: 6056bf39f05850344b455b628f83d23e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Iron Nail_Iron_nail_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: 36c13d01c6ca93d4e880a5b82500a869, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Iron Nail_Iron_nail_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: 02783957f406a234382389f26828f81c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Iron Nail_Iron_nail_M_Normal
+    second: {fileID: 2800000, guid: ac244bec00fdce84b92f72099c8a3403, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rope_Rope_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: 75670b2969864db41842476e8066bd2a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rope_Rope_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: 76f37ea8c361707479e76f0ceb226fa7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rope_Rope_M_Normal
+    second: {fileID: 2800000, guid: a14a293e544d2924cb0125d55751bf8a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tape Reading
+    second: {fileID: 2800000, guid: 917a230a11b97914185cf731110af10e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: measuring TAPE_tape 4k_AlbedoTransparency
+    second: {fileID: 2800000, guid: 871875ae59772764d8e9d31c10441fb6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: measuring TAPE_tape 4k_MetallicSmoothness
+    second: {fileID: 2800000, guid: 65b0f90acc20c624bb21110600a98bf5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: measuring TAPE_tape 4k_Normal
+    second: {fileID: 2800000, guid: 1b4256bfa741aed43b48f4dfbaf640dd, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
