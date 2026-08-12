@@ -40,6 +40,10 @@ public class DropdownMainButton : MonoBehaviour
     [SerializeField] private float animDuration = 0.25f;
     [SerializeField] private float distance = 100f;
 
+    [Header("Page Tracking (for hiding the tick once you move on)")]
+    [Tooltip("The page NUMBER (1-based, matching what's shown on screen) this dropdown block lives on. Used to auto-hide the correct/wrong tick icon (but keep the selected answer text) once the player navigates past this page.")]
+    [SerializeField] private int pageNumber = -1;
+
     private RectTransform rectTransform;
     private RectTransform currentPopup;
     private DropdownPopup popupScript;
@@ -53,6 +57,34 @@ public class DropdownMainButton : MonoBehaviour
 
         if (button != null)
             button.onClick.AddListener(OnMainClick);
+    }
+
+    private void OnEnable()
+    {
+        PageNavigationController.OnPageChanged += HandlePageChanged;
+    }
+
+    private void OnDisable()
+    {
+        PageNavigationController.OnPageChanged -= HandlePageChanged;
+    }
+
+    /// <summary>
+    /// Hides (does not destroy) the correct/wrong tick icon once the player
+    /// navigates to a DIFFERENT page than the one this dropdown belongs to.
+    /// The selected answer TEXT (outputText) is untouched, so it keeps
+    /// showing what the player picked - only the tick feedback disappears.
+    /// </summary>
+    private void HandlePageChanged(int newIndex)
+    {
+        if (pageNumber < 0) return; // not configured, skip
+        if (currentFeedback == null) return;
+
+        // PageNavigationController's currentIndex is 0-based internally, but
+        // pageNumber is entered as 1-based (matching what's shown on screen).
+        int newPageNumber = newIndex + 1;
+
+        currentFeedback.SetActive(newPageNumber == pageNumber);
     }
 
     private void OnMainClick()
