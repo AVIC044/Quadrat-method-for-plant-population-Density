@@ -10,6 +10,11 @@ public class PageNavigationController : MonoBehaviour
     [SerializeField] private Button nextButton;
     [SerializeField] private Button previousButton;
 
+    [Header("Audio Settings")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip nextPageSound;
+    [SerializeField] private AudioClip previousPageSound;
+
     [Header("Page Display")]
     [SerializeField] private TMP_Text pageNumberText;
 
@@ -43,6 +48,10 @@ public class PageNavigationController : MonoBehaviour
     {
         Instance = this;
         currentIndex = Mathf.Clamp(currentIndex, 0, NavigationPageCount - 1);
+        
+        // Fallback: search for AudioSource on the same GameObject if none is assigned
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -89,6 +98,8 @@ public class PageNavigationController : MonoBehaviour
 
         currentIndex++;
 
+        PlaySound(nextPageSound);
+
         visitedPages.Add(currentIndex);
 
         UpdateButtons();
@@ -103,11 +114,21 @@ public class PageNavigationController : MonoBehaviour
 
         currentIndex--;
 
+        PlaySound(previousPageSound);
+
         visitedPages.Add(currentIndex);
 
         UpdateButtons();
         UpdateDisplay();
         RaisePageChanged();
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 
     private void RaisePageChanged()

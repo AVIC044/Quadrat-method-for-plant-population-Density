@@ -1271,11 +1271,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PageNavigationController
   nextButton: {fileID: 1052243186}
   previousButton: {fileID: 1052243187}
+  audioSource: {fileID: 1990252355}
+  nextPageSound: {fileID: 8300000, guid: 56545c3df5523cb408f57f03f2910c77, type: 3}
+  previousPageSound: {fileID: 8300000, guid: 56545c3df5523cb408f57f03f2910c77, type: 3}
   pageNumberText: {fileID: 1052243188}
   developerIndexMode: 0
   testing: 0
   requiresInteraction: 010101010101010101010101010101010000010101010101010101010101010101010101010101010101010101010101010101010101010101010101
-  currentIndex: 13
+  currentIndex: 49
 --- !u!1 &65014910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,7 +2374,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 583686385}
-  - {fileID: 1990252354}
   - {fileID: 8308125968927442707}
   - {fileID: 5926773149635135635}
   - {fileID: 1623313532}
@@ -5798,6 +5800,9 @@ MonoBehaviour:
   observationTableButton: {fileID: 6508993983227361753}
   correctSprite: {fileID: 21300000, guid: e93e1f4e70314fc40bda8ced4f825195, type: 3}
   wrongSprite: {fileID: 21300000, guid: fa63291166620b04dad7ab5631b8d297, type: 3}
+  audioSource: {fileID: 1990252355}
+  correctSound: {fileID: 8300000, guid: ddb9b58d2abd67c4e9b146671ce2eb77, type: 3}
+  wrongSound: {fileID: 8300000, guid: a762bb80a6ad8e44ba591816638bd09e, type: 3}
   quad1SpeciesA: {fileID: 275740151}
   quad1SpeciesA_FeedbackImage: {fileID: 1041946723}
   quad1SpeciesB: {fileID: 1578408386}
@@ -34360,7 +34365,7 @@ MonoBehaviour:
       hasBeenEnabledOnce: 0
   - pageName: Page 50
     pageText: 
-    showDialogBox: 1
+    showDialogBox: 0
     showAlternatePanels: 1
     alternatePanels:
     - panel: {fileID: 1817995471}
@@ -41223,16 +41228,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990252353}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.69461805, y: 0.69461805, z: 0.69461805}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 114839985}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960.24, y: 539.86505}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1990252355
@@ -44838,5 +44843,6 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1147446645}
   - {fileID: 1041238228}
+  - {fileID: 1990252354}
   - {fileID: 1518667050}
   - {fileID: 114839985}
