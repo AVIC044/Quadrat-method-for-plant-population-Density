@@ -269,28 +269,26 @@ namespace ProjectFiles.Scripts.Managers
         {
             if (pageIndex < 0) return false;
 
-            return pageIndex == table.quad1SpeciesA_PageIndex ||
-                   pageIndex == table.quad1SpeciesB_PageIndex ||
-                   pageIndex == table.quad1SpeciesC_PageIndex ||
-                   pageIndex == table.quad2Reveal_PageIndex ||
-                   pageIndex == table.quad3Reveal_PageIndex ||
-                   pageIndex == table.numIndivSpeciesA_PageIndex ||
-                   pageIndex == table.numIndivSpeciesB_PageIndex ||
-                   pageIndex == table.numIndivSpeciesC_PageIndex ||
-                   pageIndex == table.numQuadStudiedAndDensityA_PageIndex ||
-                   pageIndex == table.densitySpeciesB_PageIndex ||
-                   pageIndex == table.densitySpeciesC_PageIndex;
+            return (table.quad1SpeciesA_PageIndex >= 0 && pageIndex == table.quad1SpeciesA_PageIndex) ||
+                   (table.quad1SpeciesB_PageIndex >= 0 && pageIndex == table.quad1SpeciesB_PageIndex) ||
+                   (table.quad1SpeciesC_PageIndex >= 0 && pageIndex == table.quad1SpeciesC_PageIndex) ||
+                   (table.quad2Reveal_PageIndex >= 0 && pageIndex == table.quad2Reveal_PageIndex) ||
+                   (table.quad3Reveal_PageIndex >= 0 && pageIndex == table.quad3Reveal_PageIndex) ||
+                   (table.numIndivSpeciesA_PageIndex >= 0 && pageIndex == table.numIndivSpeciesA_PageIndex) ||
+                   (table.numIndivSpeciesB_PageIndex >= 0 && pageIndex == table.numIndivSpeciesB_PageIndex) ||
+                   (table.numIndivSpeciesC_PageIndex >= 0 && pageIndex == table.numIndivSpeciesC_PageIndex) ||
+                   (table.numQuadStudiedAndDensityA_PageIndex >= 0 && pageIndex == table.numQuadStudiedAndDensityA_PageIndex) ||
+                   (table.densitySpeciesB_PageIndex >= 0 && pageIndex == table.densitySpeciesB_PageIndex) ||
+                   (table.densitySpeciesC_PageIndex >= 0 && pageIndex == table.densitySpeciesC_PageIndex);
         }
 
         private void HandlePageChanged(int index)
         {
-            Debug.Log($"[Navigation Debug] Page changed to Index: {index}");
             activeIndex = index;
 
-            // Find which table corresponds to this specific page index
+            // Strict lookup for matching table data
             currentActiveTable = observationTables.Find(t => IsTablePage(t, index));
 
-            // Hide all panels and reset states
             foreach (var table in observationTables)
             {
                 SetPanelActiveState(table, false);
@@ -301,9 +299,13 @@ namespace ProjectFiles.Scripts.Managers
 
             if (observationTableButton != null)
             {
+                // Ensures button is active even if sibling panels were turned off
+                observationTableButton.transform.SetAsLastSibling();
                 observationTableButton.gameObject.SetActive(isObservationPage);
-                observationTableButton.interactable = isObservationPage;
+                //observationTableButton.interactable = isObservationPage;
             }
+
+            Debug.Log($"[Navigation Debug] Page changed to Index: {index} | Active Table Found: {(currentActiveTable != null ? currentActiveTable.tableName : "None")}");
         }
 
         public void OnObservationTableButtonClicked()
@@ -311,6 +313,14 @@ namespace ProjectFiles.Scripts.Managers
             if (currentActiveTable == null) return;
 
             Debug.Log($"[Observation Table] Button clicked for {currentActiveTable.tableName} at Page Index: {activeIndex}");
+
+            foreach (var table in observationTables)
+            {
+                if (table != currentActiveTable)
+                {
+                    SetPanelActiveState(table, false);
+                }
+            }
 
             SetPanelActiveState(currentActiveTable, true);
             ResetAllControls(currentActiveTable);
