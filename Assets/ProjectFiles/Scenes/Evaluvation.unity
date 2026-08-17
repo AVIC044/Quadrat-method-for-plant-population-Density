@@ -1644,22 +1644,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4115035806411488027, guid: e12282d9cb1d0c44fa7b13d62d6755b2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4115035806411488027, guid: e12282d9cb1d0c44fa7b13d62d6755b2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 448350222}
-    - target: {fileID: 4115035806411488027, guid: e12282d9cb1d0c44fa7b13d62d6755b2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4115035806411488027, guid: e12282d9cb1d0c44fa7b13d62d6755b2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4148921365802624158, guid: e12282d9cb1d0c44fa7b13d62d6755b2, type: 3}
       propertyPath: m_Name
       value: BottomPanel
@@ -4453,10 +4437,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PageNavigationController
   nextButton: {fileID: 1322361726}
   previousButton: {fileID: 1316628276}
+  pageNumberText: {fileID: 866971327}
   audioSource: {fileID: 1270305923}
   nextPageSound: {fileID: 8300000, guid: 56545c3df5523cb408f57f03f2910c77, type: 3}
   previousPageSound: {fileID: 8300000, guid: 56545c3df5523cb408f57f03f2910c77, type: 3}
-  pageNumberText: {fileID: 866971327}
   developerIndexMode: 0
   testing: 0
   requiresInteraction: 0101010101010101
