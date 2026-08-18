@@ -9444,6 +9444,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   correctSound: {fileID: 0}
   wrongSound: {fileID: 0}
+  activeHighlightColor: {r: 1, g: 0.72156864, b: 0, a: 1}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
   observationTables:
   - tableName: Observation Table 1
     observationTablePanel: {fileID: 7894353050711711341}
