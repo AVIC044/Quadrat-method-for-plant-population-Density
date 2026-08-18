@@ -94,6 +94,10 @@ namespace ProjectFiles.Scripts.Managers
         [SerializeField] private AudioClip correctSound;
         [SerializeField] private AudioClip wrongSound;
 
+        [Header("Highlight Colors")]
+        [SerializeField] private Color activeHighlightColor = Color.yellow;
+        [SerializeField] private Color defaultColor = Color.white;
+
         [Header("Observation Tables Setup")]
         [SerializeField] private List<TableData> observationTables = new();
 
@@ -286,7 +290,6 @@ namespace ProjectFiles.Scripts.Managers
         {
             activeIndex = index;
 
-            // Strict lookup for matching table data
             currentActiveTable = observationTables.Find(t => IsTablePage(t, index));
 
             foreach (var table in observationTables)
@@ -299,13 +302,59 @@ namespace ProjectFiles.Scripts.Managers
 
             if (observationTableButton != null)
             {
-                // Ensures button is active even if sibling panels were turned off
                 observationTableButton.transform.SetAsLastSibling();
                 observationTableButton.gameObject.SetActive(isObservationPage);
-                //observationTableButton.interactable = isObservationPage;
+            }
+
+            if (currentActiveTable != null && IsCurrentPageAlreadyCompleted(currentActiveTable, index))
+            {
+                OnObservationTableButtonClicked();
             }
 
             Debug.Log($"[Navigation Debug] Page changed to Index: {index} | Active Table Found: {(currentActiveTable != null ? currentActiveTable.tableName : "None")}");
+        }
+
+        private bool IsCurrentPageAlreadyCompleted(TableData table, int pageIndex)
+        {
+            if (pageIndex == table.quad1SpeciesA_PageIndex)
+                return IsDropdownCompleted(table, table.quad1SpeciesA);
+
+            if (pageIndex == table.quad1SpeciesB_PageIndex)
+                return IsDropdownCompleted(table, table.quad1SpeciesB);
+
+            if (pageIndex == table.quad1SpeciesC_PageIndex)
+                return IsDropdownCompleted(table, table.quad1SpeciesC);
+
+            if (pageIndex == table.quad2Reveal_PageIndex)
+                return table.isQuad2Revealed;
+
+            if (pageIndex == table.quad3Reveal_PageIndex)
+                return table.isQuad3Revealed;
+
+            if (pageIndex == table.numIndivSpeciesA_PageIndex)
+                return IsDropdownCompleted(table, table.numIndivSpeciesA);
+
+            if (pageIndex == table.numIndivSpeciesB_PageIndex)
+                return IsDropdownCompleted(table, table.numIndivSpeciesB);
+
+            if (pageIndex == table.numIndivSpeciesC_PageIndex)
+                return IsDropdownCompleted(table, table.numIndivSpeciesC);
+
+            if (pageIndex == table.numQuadStudiedAndDensityA_PageIndex)
+                return table.isNumQuadStudiedRevealed && IsDropdownCompleted(table, table.densitySpeciesA);
+
+            if (pageIndex == table.densitySpeciesB_PageIndex)
+                return IsDropdownCompleted(table, table.densitySpeciesB);
+
+            if (pageIndex == table.densitySpeciesC_PageIndex)
+                return IsDropdownCompleted(table, table.densitySpeciesC);
+
+            return false;
+        }
+
+        private bool IsDropdownCompleted(TableData table, TMP_Dropdown dropdown)
+        {
+            return dropdown != null && table.correctlyAnsweredDropdowns.Contains(dropdown);
         }
 
         public void OnObservationTableButtonClicked()
@@ -340,13 +389,13 @@ namespace ProjectFiles.Scripts.Managers
             else if (activeIndex == currentActiveTable.quad2Reveal_PageIndex)
             {
                 currentActiveTable.isQuad2Revealed = true;
-                SetTMPsState(currentActiveTable.quad2Tmps, true);
+                SetTMPsState(currentActiveTable.quad2Tmps, true, true);
                 UnlockPageNavigation();
             }
             else if (activeIndex == currentActiveTable.quad3Reveal_PageIndex)
             {
                 currentActiveTable.isQuad3Revealed = true;
-                SetTMPsState(currentActiveTable.quad3Tmps, true);
+                SetTMPsState(currentActiveTable.quad3Tmps, true, true);
                 UnlockPageNavigation();
             }
             else if (activeIndex == currentActiveTable.numIndivSpeciesA_PageIndex)
@@ -364,7 +413,7 @@ namespace ProjectFiles.Scripts.Managers
             else if (activeIndex == currentActiveTable.numQuadStudiedAndDensityA_PageIndex)
             {
                 currentActiveTable.isNumQuadStudiedRevealed = true;
-                SetTMPsState(currentActiveTable.numQuadStudiedTmps, true);
+                SetTMPsState(currentActiveTable.numQuadStudiedTmps, true, true);
                 EnableDropdown(currentActiveTable, currentActiveTable.densitySpeciesA);
             }
             else if (activeIndex == currentActiveTable.densitySpeciesB_PageIndex)
@@ -453,9 +502,9 @@ namespace ProjectFiles.Scripts.Managers
 
             HideAllFeedbackImages(table);
 
-            SetTMPsState(table.quad2Tmps, table.isQuad2Revealed);
-            SetTMPsState(table.quad3Tmps, table.isQuad3Revealed);
-            SetTMPsState(table.numQuadStudiedTmps, table.isNumQuadStudiedRevealed);
+            SetTMPsState(table.quad2Tmps, table.isQuad2Revealed, false);
+            SetTMPsState(table.quad3Tmps, table.isQuad3Revealed, false);
+            SetTMPsState(table.numQuadStudiedTmps, table.isNumQuadStudiedRevealed, false);
         }
 
         private void EnableDropdown(TableData table, TMP_Dropdown dropdown)
@@ -463,6 +512,12 @@ namespace ProjectFiles.Scripts.Managers
             if (dropdown == null) return;
 
             dropdown.gameObject.SetActive(true);
+
+            // Highlight active dropdown text with activeHighlightColor (Yellow)
+            if (dropdown.captionText != null)
+            {
+                dropdown.captionText.color = activeHighlightColor;
+            }
 
             if (table.correctlyAnsweredDropdowns.Contains(dropdown))
             {
@@ -485,16 +540,27 @@ namespace ProjectFiles.Scripts.Managers
             if (dropdown != null)
             {
                 dropdown.interactable = false;
+                if (dropdown.captionText != null)
+                {
+                    dropdown.captionText.color = defaultColor;
+                }
             }
         }
 
-        private void SetTMPsState(List<GameObject> tmps, bool state)
+        private void SetTMPsState(List<GameObject> tmps, bool state, bool isHighlighted = false)
         {
             if (tmps == null) return;
             foreach (var tmp in tmps)
             {
                 if (tmp != null)
+                {
                     tmp.SetActive(state);
+                    TMP_Text textComp = tmp.GetComponent<TMP_Text>();
+                    if (textComp != null)
+                    {
+                        textComp.color = isHighlighted ? activeHighlightColor : defaultColor;
+                    }
+                }
             }
         }
     }
