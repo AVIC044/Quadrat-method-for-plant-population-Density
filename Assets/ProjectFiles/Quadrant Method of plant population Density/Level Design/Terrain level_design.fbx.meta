@@ -3,7 +3,132 @@ guid: 6b67c3466a07a294f99b2d9b0e4be91a
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Iron_nail_M.004
+    second: {fileID: 2100000, guid: bdbe457cca7640a4990016069f1e5ecc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Iron_nail_M.005
+    second: {fileID: 2100000, guid: 423ccef6b72b53d41a63c25a0cca1670, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Medicago_Polymarpha_Species__M.002
+    second: {fileID: 2100000, guid: 4b9559b5cb594304b8b30f5b52042ccf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Medicago_polymorpha_M.001
+    second: {fileID: 2100000, guid: 633eb8d8686f0eb4cb7c74cc4f3e48fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thread_M.001
+    second: {fileID: 2100000, guid: dbeaa40ac40d01649bb12f9086bbee7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bake terrain.001
+    second: {fileID: 2100000, guid: 7b6b8536256b8ec4a87f1e44b761c447, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: spermacoce_pusilla_M.002
+    second: {fileID: 2100000, guid: 59b2191728a32564aae4cbb3986ac3aa, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Iron Nail_Iron_nail_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: e08bd11a2fa1b614caaaed94e2d79db1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Iron Nail_Iron_nail_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: c6a1f03cf6945cd468fb38c520cdd4b6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Iron Nail_Iron_nail_M_Normal
+    second: {fileID: 2800000, guid: 7691772abfd305c4a9446b3e48a67cfd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Medicago_Polymarpha_Species_A_Medicago_Polymarpha_Species__M.001_AlbedoTransparency
+    second: {fileID: 2800000, guid: 0fc9e0509b684654ebae0cdd6d3d147f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Medicago_Polymarpha_Species_A_Medicago_Polymarpha_Species__M.001_MetallicSmoothness
+    second: {fileID: 2800000, guid: 73dc6a35b8c460f4eb77850499b24ec1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Medicago_Polymarpha_Species_A_Medicago_Polymarpha_Species__M.001_Normal
+    second: {fileID: 2800000, guid: 01cc4e4731ac9d84394e7fab4d158833, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Medicago_polymorpha_Medicago_polymorpha_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: ab94f48b9b0f5f745b76750624e0383e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Medicago_polymorpha_Medicago_polymorpha_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: f7ad450e0be5c8f4f82cf1b9f9820ed3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Medicago_polymorpha_Medicago_polymorpha_M_Normal
+    second: {fileID: 2800000, guid: 65960da31c335a84f8acaf475b646c00, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Thread_Thread_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: c2e3b1b1ffddf1f448baf6b1ecc05066, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Thread_Thread_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: da1b913cc961f02428e1def6eb00f947, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Thread_Thread_M_Normal
+    second: {fileID: 2800000, guid: 103eef0180073b844a961fb1345be8de, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: baked terrain
+    second: {fileID: 2800000, guid: b8a0703f52f261247b1c9625cdd638f7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: spermacoce_pusilla_spermacoce_pusilla_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: c7a29858dd00bb54ea69beba7a2b1bdd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: spermacoce_pusilla_spermacoce_pusilla_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: cdbb6537b2372fd4fb49f833485164c8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: spermacoce_pusilla_spermacoce_pusilla_M_Normal
+    second: {fileID: 2800000, guid: 8dd4ef809d239f54f891ffc2a54828a4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: terrain normal
+    second: {fileID: 2800000, guid: af6ecb232b5eb2247a6e719b86d41a00, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: terrain roughness
+    second: {fileID: 2800000, guid: 99a8e1e874ace694897da3998ad73356, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
