@@ -73,6 +73,24 @@ namespace ProjectFiles.Scripts.Managers
             public int densitySpeciesB_CorrectIndex = 0;
             public int densitySpeciesC_CorrectIndex = 0;
 
+            [Header("Wrong Answer Feedback Messages")]
+            [TextArea(2, 3)] public string quad1SpeciesA_WrongMsg = "Incorrect selection for Quadrat 1 - Species A. Please check your observation.";
+            [TextArea(2, 3)] public string quad1SpeciesB_WrongMsg = "Incorrect selection for Quadrat 1 - Species B. Please check your observation.";
+            [TextArea(2, 3)] public string quad1SpeciesC_WrongMsg = "Incorrect selection for Quadrat 1 - Species C. Please check your observation.";
+            [Space]
+            [TextArea(2, 3)] public string numIndivSpeciesA_WrongMsg = "Incorrect number of individuals for Species A.";
+            [TextArea(2, 3)] public string numIndivSpeciesB_WrongMsg = "Incorrect number of individuals for Species B.";
+            [TextArea(2, 3)] public string numIndivSpeciesC_WrongMsg = "Incorrect number of individuals for Species C.";
+            [Space]
+            [TextArea(2, 3)] public string densitySpeciesA_WrongMsg = "Incorrect density value calculated for Species A.";
+            [TextArea(2, 3)] public string densitySpeciesB_WrongMsg = "Incorrect density value calculated for Species B.";
+            [TextArea(2, 3)] public string densitySpeciesC_WrongMsg = "Incorrect density value calculated for Species C.";
+
+            [Header("Reveal Page Messages")]
+            [TextArea(2, 4)] public string quad2Reveal_Msg = "Quadrat 2 observations have been revealed.";
+            [TextArea(2, 4)] public string quad3Reveal_Msg = "Quadrat 3 observations have been revealed.";
+            [TextArea(2, 4)] public string numQuadStudied_Msg = "Total number of quadrats studied has been revealed.";
+
             // Runtime state tracked per table
             [HideInInspector] public bool isQuad2Revealed;
             [HideInInspector] public bool isQuad3Revealed;
@@ -84,6 +102,7 @@ namespace ProjectFiles.Scripts.Managers
             [HideInInspector] public HashSet<TMP_Dropdown> correctlyAnsweredDropdowns = new();
             [HideInInspector] public Dictionary<TMP_Dropdown, int> correctAnswers = new();
             [HideInInspector] public Dictionary<TMP_Dropdown, Image> feedbackImages = new();
+            [HideInInspector] public Dictionary<TMP_Dropdown, string> wrongMessages = new();
         }
 
         [Header("Global UI & Audio Settings")]
@@ -93,6 +112,12 @@ namespace ProjectFiles.Scripts.Managers
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip correctSound;
         [SerializeField] private AudioClip wrongSound;
+
+        [Header("Message Panel Settings")]
+        [Tooltip("The UI Panel/Image that contains the text child component")]
+        [SerializeField] private GameObject messagePanel;
+        [Tooltip("The TextMeshPro text component child inside the message panel")]
+        [SerializeField] private TMP_Text messageText;
 
         [Header("Highlight Colors")]
         [SerializeField] private Color activeHighlightColor = Color.yellow;
@@ -121,6 +146,8 @@ namespace ProjectFiles.Scripts.Managers
             {
                 InitializeTable(table);
             }
+
+            HideMessage();
         }
 
         private void InitializeTable(TableData table)
@@ -143,6 +170,7 @@ namespace ProjectFiles.Scripts.Managers
 
             MapCorrectAnswers(table);
             MapFeedbackImages(table);
+            MapWrongMessages(table);
         }
 
         private void OnEnable()
@@ -230,11 +258,55 @@ namespace ProjectFiles.Scripts.Managers
             HideAllFeedbackImages(table);
         }
 
+        private void MapWrongMessages(TableData table)
+        {
+            table.wrongMessages.Clear();
+            if (table.quad1SpeciesA != null) table.wrongMessages[table.quad1SpeciesA] = table.quad1SpeciesA_WrongMsg;
+            if (table.quad1SpeciesB != null) table.wrongMessages[table.quad1SpeciesB] = table.quad1SpeciesB_WrongMsg;
+            if (table.quad1SpeciesC != null) table.wrongMessages[table.quad1SpeciesC] = table.quad1SpeciesC_WrongMsg;
+
+            if (table.numIndivSpeciesA != null) table.wrongMessages[table.numIndivSpeciesA] = table.numIndivSpeciesA_WrongMsg;
+            if (table.numIndivSpeciesB != null) table.wrongMessages[table.numIndivSpeciesB] = table.numIndivSpeciesB_WrongMsg;
+            if (table.numIndivSpeciesC != null) table.wrongMessages[table.numIndivSpeciesC] = table.numIndivSpeciesC_WrongMsg;
+
+            if (table.densitySpeciesA != null) table.wrongMessages[table.densitySpeciesA] = table.densitySpeciesA_WrongMsg;
+            if (table.densitySpeciesB != null) table.wrongMessages[table.densitySpeciesB] = table.densitySpeciesB_WrongMsg;
+            if (table.densitySpeciesC != null) table.wrongMessages[table.densitySpeciesC] = table.densitySpeciesC_WrongMsg;
+        }
+
         private void HideAllFeedbackImages(TableData table)
         {
             foreach (var img in table.feedbackImages.Values)
             {
                 if (img != null) img.gameObject.SetActive(false);
+            }
+        }
+
+        private void ShowMessage(string content)
+        {
+            if (string.IsNullOrEmpty(content)) return;
+
+            if (messageText != null)
+            {
+                messageText.text = content;
+            }
+
+            if (messagePanel != null)
+            {
+                messagePanel.SetActive(true);
+            }
+        }
+
+        private void HideMessage()
+        {
+            if (messagePanel != null)
+            {
+                messagePanel.SetActive(false);
+            }
+
+            if (messageText != null)
+            {
+                messageText.text = string.Empty;
             }
         }
 
@@ -289,6 +361,7 @@ namespace ProjectFiles.Scripts.Managers
         private void HandlePageChanged(int index)
         {
             activeIndex = index;
+            HideMessage();
 
             currentActiveTable = observationTables.Find(t => IsTablePage(t, index));
 
@@ -374,6 +447,9 @@ namespace ProjectFiles.Scripts.Managers
             SetPanelActiveState(currentActiveTable, true);
             ResetAllControls(currentActiveTable);
 
+            // Hide previous messages on opening table panel
+            HideMessage();
+
             if (activeIndex == currentActiveTable.quad1SpeciesA_PageIndex)
             {
                 EnableDropdown(currentActiveTable, currentActiveTable.quad1SpeciesA);
@@ -390,12 +466,14 @@ namespace ProjectFiles.Scripts.Managers
             {
                 currentActiveTable.isQuad2Revealed = true;
                 SetTMPsState(currentActiveTable.quad2Tmps, true, true);
+                ShowMessage(currentActiveTable.quad2Reveal_Msg);
                 UnlockPageNavigation();
             }
             else if (activeIndex == currentActiveTable.quad3Reveal_PageIndex)
             {
                 currentActiveTable.isQuad3Revealed = true;
                 SetTMPsState(currentActiveTable.quad3Tmps, true, true);
+                ShowMessage(currentActiveTable.quad3Reveal_Msg);
                 UnlockPageNavigation();
             }
             else if (activeIndex == currentActiveTable.numIndivSpeciesA_PageIndex)
@@ -414,6 +492,7 @@ namespace ProjectFiles.Scripts.Managers
             {
                 currentActiveTable.isNumQuadStudiedRevealed = true;
                 SetTMPsState(currentActiveTable.numQuadStudiedTmps, true, true);
+                ShowMessage(currentActiveTable.numQuadStudied_Msg);
                 EnableDropdown(currentActiveTable, currentActiveTable.densitySpeciesA);
             }
             else if (activeIndex == currentActiveTable.densitySpeciesB_PageIndex)
@@ -454,11 +533,20 @@ namespace ProjectFiles.Scripts.Managers
                         Debug.Log($"[{table.tableName}] Correct selection on dropdown '{dropdown.name}' (Index: {selectedIndex}).");
                         table.correctlyAnsweredDropdowns.Add(dropdown);
                         dropdown.interactable = false;
+                        
+                        // Hide message panel on correct selection
+                        HideMessage();
                         UnlockPageNavigation();
                     }
                     else
                     {
                         Debug.LogWarning($"[{table.tableName}] Incorrect selection on '{dropdown.name}'. Selected: {selectedIndex}, Expected: {expectedCorrectIndex}");
+                        
+                        // Show message panel with specific wrong message for this dropdown
+                        if (table.wrongMessages.TryGetValue(dropdown, out string wrongMsg))
+                        {
+                            ShowMessage(wrongMsg);
+                        }
                     }
                 }
             }
@@ -501,6 +589,7 @@ namespace ProjectFiles.Scripts.Managers
             }
 
             HideAllFeedbackImages(table);
+            HideMessage();
 
             SetTMPsState(table.quad2Tmps, table.isQuad2Revealed, false);
             SetTMPsState(table.quad3Tmps, table.isQuad3Revealed, false);
