@@ -1,58 +1,110 @@
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections.Generic;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using System.Collections;
 
-
+[RequireComponent(typeof(Collider))]
 public class TouchOrClickEventRotation : MonoBehaviour
 {
-    [Header("Serialized References")]
+    [Header("Input References")]
     [SerializeField] private Camera targetCamera;
+
+    [Header("Rotation References")]
     [SerializeField] private Transform targetToRotate;
     [SerializeField] private float timecount = 1.0f;
 
-    [Header("Rotation Settings")]
-    public float angleOfRotation;
+    [Header("Slide / Index Settings")]
+    [Tooltip("The slide index on which this object is allowed to rotate.")]
+    [SerializeField] private int requiredSlideIndex;
+
+    [Tooltip("The current slide index used for the built-in index check.")]
     public int currentSlideIndex;
 
-    // ============================================================
-    // ROTATION EVENTS
-    // ============================================================
+    [Header("Input Behavior")]
+    [Tooltip("If enabled, clicks/touches over UI elements will be ignored.")]
+    [SerializeField] private bool ignoreUI = true;
+
+    [Header("Rotation Settings")]
+    public float angleOfRotation;
 
     [Header("Rotation Events")]
-
     public UnityEvent OnRotationStarted;
     public UnityEvent OnRotationCompleted;
-
-    // ============================================================
-    // CONDITIONAL ROTATION EVENTS
-    // ============================================================
-
-    [System.Serializable]
-    public class ConditionalRotationEvent
-    {
-        [Header("Slide Condition")]
-        [Tooltip("Event will trigger only when the current slide index matches this value.")]
-        public int requiredSlideIndex;
-
-        public UnityEvent onInvoked;
-
-        [Header("Trigger Settings")]
-        public bool allowMultipleTriggers = true;
-
-        [HideInInspector]
-        public bool hasTriggered;
-    }
-
-    [Header("Invoke When Slide Index Matches")]
-    public List<ConditionalRotationEvent> conditionalRotationEvents =
-        new List<ConditionalRotationEvent>();
 
     // ============================================================
     // INTERNAL
     // ============================================================
 
+    private Collider cachedCollider;
     private Coroutine rotationCoroutine;
+
+    // ============================================================
+    // LIFECYCLE
+    // ============================================================
+
+    private void Awake()
+    {
+        cachedCollider = GetComponent<Collider>();
+
+        if (targetCamera == null)
+            targetCamera = Camera.main;
+
+        if (targetToRotate == null)
+            targetToRotate = transform;
+    }
+
+    // ============================================================
+    // INPUT
+    // ============================================================
+
+    private void Update()
+    {
+        if (targetCamera == null)
+            return;
+
+        // -------- MOUSE --------
+        if (Mouse.current != null &&
+            Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            ProcessPointer(Mouse.current.position.ReadValue());
+        }
+
+        // -------- TOUCH --------
+        if (Touchscreen.current != null)
+        {
+            var touch = Touchscreen.current.primaryTouch;
+
+            if (touch.press.wasPressedThisFrame)
+            {
+                ProcessPointer(touch.position.ReadValue());
+            }
+        }
+    }
+
+    private void ProcessPointer(Vector2 screenPosition)
+    {
+        if (ignoreUI &&
+            EventSystem.current != null &&
+            EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
+        Ray ray = targetCamera.ScreenPointToRay(screenPosition);
+
+        if (!Physics.Raycast(ray, out RaycastHit hit))
+            return;
+
+        if (hit.collider != cachedCollider)
+            return;
+
+        // The index check is built into the rotation trigger.
+        if (currentSlideIndex != requiredSlideIndex)
+            return;
+
+        RotateObject();
+    }
 
     // ============================================================
     // ROTATION
@@ -87,8 +139,6 @@ public class TouchOrClickEventRotation : MonoBehaviour
 
         targetToRotate.rotation = targetFinalRotation;
 
-        InvokeConditionalRotationEvents();
-
         OnRotationCompleted?.Invoke();
 
         rotationCoroutine = null;
@@ -103,37 +153,14 @@ public class TouchOrClickEventRotation : MonoBehaviour
         if (rotationCoroutine != null)
             return;
 
+        // Keep the public API safe as well: rotation can only start
+        // on the required index, even if RotateObject() is called
+        // from another UnityEvent.
+        if (currentSlideIndex != requiredSlideIndex)
+            return;
+
         rotationCoroutine = StartCoroutine(
             RotateObjectRoutine(angleOfRotation)
         );
-    }
-
-    // ============================================================
-    // CONDITIONAL EVENTS
-    // ============================================================
-
-    private void InvokeConditionalRotationEvents()
-    {
-        int currentIndex = currentSlideIndex;
-
-        foreach (var entry in conditionalRotationEvents)
-        {
-            if (entry.requiredSlideIndex != currentIndex)
-                continue;
-
-            if (!entry.allowMultipleTriggers && entry.hasTriggered)
-                continue;
-
-            entry.hasTriggered = true;
-            entry.onInvoked?.Invoke();
-        }
-    }
-
-    public void ResetAllConditionalTriggers()
-    {
-        foreach (var entry in conditionalRotationEvents)
-        {
-            entry.hasTriggered = false;
-        }
     }
 }
