@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 namespace DeterminingMassofaBodyUsingMeterscale
 {
@@ -17,6 +18,8 @@ namespace DeterminingMassofaBodyUsingMeterscale
         [SerializeField] private Material highlightMaterial;
 
         public event Action OnCorrectDropped;
+
+        public UnityEvent OnDropped;
 
         private readonly Dictionary<Renderer, Material[]> originalMaterials =
             new();
@@ -86,6 +89,7 @@ namespace DeterminingMassofaBodyUsingMeterscale
 
             PageNavigationController.RequestNavigationUnlock();
             OnCorrectDropped?.Invoke();
+            OnDropped?.Invoke();
             return true;
         }
 

@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: c4a47594c0b8bd64cb25559474b15b32
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Medicago_Polymarpha_Species_A_Medicago_Polymarpha_Species__M.001_AlbedoTransparency
+    second: {fileID: 2800000, guid: e8a42daa21b109f4bad547ac0336240f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Medicago_Polymarpha_Species_A_Medicago_Polymarpha_Species__M.001_MetallicSmoothness
+    second: {fileID: 2800000, guid: b012b5f99d3a9c9448890c406cff62f5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Medicago_Polymarpha_Species_A_Medicago_Polymarpha_Species__M.001_Normal
+    second: {fileID: 2800000, guid: b2171c4972ba98546a8f58bc3d51c013, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Medicago_polymorpha_Medicago_polymorpha_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: 65d760d7517d82a458010cf835ee981e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Medicago_polymorpha_Medicago_polymorpha_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: 3a4ecae6ca19eae41bf52834c1f33806, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Medicago_polymorpha_Medicago_polymorpha_M_Normal
+    second: {fileID: 2800000, guid: 4b9a7a51978df11418a7fda2ae98c641, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pot_Pot_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: a92555adcb017da478ff3362d39ed7c5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pot_Pot_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: 4622eddd541fabc49be063687d25d379, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pot_Pot_M_Normal
+    second: {fileID: 2800000, guid: ea3ac29db27fbf34cbb308a32279929f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sand_Sand_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: 3eee1a6f933610c4b80afdb23e5a883f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sand_Sand_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: 2ab207a1569496f4895c9a5eb4c5dc5f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sand_Sand_M_Normal
+    second: {fileID: 2800000, guid: d5a82f728f2cde4419b0687b5f2001c4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: spermacoce_pusilla_spermacoce_pusilla_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: fd53f3579e1ad654f9f0d719afb94726, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: spermacoce_pusilla_spermacoce_pusilla_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: 4117c95b2e754a54b9741327e21814ea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: spermacoce_pusilla_spermacoce_pusilla_M_Normal
+    second: {fileID: 2800000, guid: 521e5f75d71aa8b4aad33cef2d30e3c2, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
